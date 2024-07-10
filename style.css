@@ -1,5 +1,6 @@
 #divContainer {
     text-align: center;
+    margin: auto;
     font-size: 5em;
     border: solid;
     border-radius: 10px;
