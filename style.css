@@ -1,0 +1,19 @@
+#divContainer {
+    text-align: center;
+    font-size: 5em;
+    border: solid;
+    border-radius: 10px;
+    background-color: mediumpurple;
+    
+}
+.buttons{
+    font-size: 35px; 
+    background-color: tomato;  
+}
+html{
+    background-color: skyblue;
+}
+.buttons:hover{
+    background-color: white;
+    cursor: pointer;
+}
