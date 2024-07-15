@@ -75,8 +75,7 @@ let order = console.log(`I want ${fruits[2]} with ${milk[0]} please`)
 
 
 
-
-
+/*
 let weather = new Promise ((resolve, reject) => {
     setTimeout(() => 
   //  resolve(), 3000)
@@ -94,7 +93,7 @@ let weather = new Promise ((resolve, reject) => {
 })
 
 console.log('whats the weather today?')
-
+*/
 
 /* 
 const promise = new Promise ((resolved, rejected) => {
@@ -111,10 +110,12 @@ const promise = new Promise ((resolved, rejected) => {
     
 })
 //this worked as intended 😆 
+
+
+function greet (){
+    setTimeout(() =>
+    console.log('greetings bruv'), 3000)
+    }
+
+greet()
 */
-
-    
-
-
-
-
