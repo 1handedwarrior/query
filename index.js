@@ -119,3 +119,14 @@ function greet (){
 
 greet()
 */
+/*
+function timer (){
+    setTimeout(() => {
+        console.log('I made this timer boi')}, 3000)
+    
+}
+
+timer()
+// just getting the feel for setting timeouts
+
+*/
