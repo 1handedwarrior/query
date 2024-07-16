@@ -130,3 +130,12 @@ timer()
 // just getting the feel for setting timeouts
 
 */
+/*
+let guy = window.prompt('whats your name?');
+function timer(){
+    setTimeout(() => {
+        console.log(`sup ${guy}`)}, 3000)
+    }
+
+    timer()
+    */
