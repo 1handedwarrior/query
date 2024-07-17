@@ -1,3 +1,4 @@
+
 /*
 function greet (){
     console.log('hello')
@@ -11,15 +12,16 @@ function greetUser (){
     alert(`hello ${name}`)
 } 
 greetUser()
-/*
 
-function welcome (name, greet){
-      `I said ${greetUser}`
+
+function welcome (){
+    let name = 'bryan';
+    alert(`I meant ${name}`)
 }
-welcome(name, greet) 
-
-
-/*let isRunning = true
+welcome() 
+*/
+/*
+let isRunning = true;
     
     function greet () {
     let username = window.prompt(`Enter your username`);
@@ -30,26 +32,38 @@ welcome(name, greet)
             console.log(alert(`Hello ${username}`))        
     
     }
-        console.log('program not running')
 
-isRunning ? greet() : false */
-
+greet()
+isRunning ? console.log('Program running') : console.log('Program not running');
+*/
+//can seem to use this callback, back to yt 
 /*
-function task1 (taskTwo){
-    console.log('Completed task 1');
-    taskTwo = task2()
-
+function task1 (){
+    setTimeout(() => {
+        console.log('You have completed task 1️⃣')
+    }, 3000)
 }
-function task2 (taskThree){
-    console.log('Completed task 2')
-    taskThree = task3()
-
+function task2 (){
+    setTimeout(() => {
+        console.log('You have completed task 2️⃣')
+    }, 3000)
 }
 function task3 (){
-    console.log('Completed all tasks')
-
+    setTimeout(() => {
+        console.log('You have completed task 3️⃣')
+    }, 3000)
 }
-task1() */ 
+function tasks (taskOne){
+    taskOne = task1((taskTwo) => {
+        taskTwo = task2((taskThree) => {
+            taskThree = task3()
+            })
+    })
+}
+*/
+
+
+
 /*
 let fruits = ['apple', 'banana', 'mango']
 let milk = ['oat milk', 'no milk', 'cow milk']
@@ -130,7 +144,7 @@ timer()
 // just getting the feel for setting timeouts
 
 */
-
+/*
 let guy = window.prompt('whats your name?');
 function timer(){
     setTimeout(() => {
