@@ -130,12 +130,33 @@ timer()
 // just getting the feel for setting timeouts
 
 */
-/*
+
 let guy = window.prompt('whats your name?');
 function timer(){
     setTimeout(() => {
-        console.log(`sup ${guy}`)}, 3000)
+        console.log(`sup ${guy}`)}, 2000)
     }
 
-    timer()
-    */
+timer()
+
+/*
+let bro = 'Chris';
+
+const tiempo = () => {
+    setTimeout(() => {
+        console.log(`sup ${bro}`)
+    }, 0)
+}
+
+
+tiempo()
+console.log('this should come before tiempo')
+
+/* the reason the console.log string comes first even though 
+the timeout id is for 0 ms, is the event loop. I think ?
+
+Executing tiempo is the first up in the call stack, but the set
+timeout gets placed in the event queue. The console.log string
+then gets executed, emptying the call stack. Now once the call
+stack is empty, the items placed in the event-queue get executed next  
+*/
