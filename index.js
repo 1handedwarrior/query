@@ -237,7 +237,7 @@ const tiempo = () => {
 tiempo()
 console.log('this should come before tiempo')
 */
-/* 
+/*
 the reason the console.log string comes first even though 
 the timeout id is for 0 ms, is the event loop. I think ?
 
@@ -247,26 +247,86 @@ then gets executed, emptying the call stack. Now once the call
 stack is empty, the items placed in the event-queue got executed next  
 */
 /*
-function task1(callback){
+function washCar(callback){
     setTimeout(() => {
-        console.log('Youve taken out the trash 🗑️')
-        callback();
-    }, 1000)
-} 
-function task2(callback){
-    setTimeout(() => {
-        console.log('Youve cleaned the dishes 🍽️')
-        callback();
+        console.log('I cleaned the s15 🏎️')
+        callback()
     }, 3000)
-} 
-function task3(){
+}
+function lunch(callback){
     setTimeout(() => {
-        console.log('Youve completed all tasks ✅')
-    }, 500)
-} 
-task1(() => {
-    task2(() => {
-        task3();
+        console.log('I ate lunch 🥪')
+        callback()
+    }, 1500)
+}
+function sleep(){
+    setTimeout(() => {
+        console.log('I went to sleep 💤')
+    }, 1000)
+}
+washCar(() => {
+    lunch(() => {
+        sleep();
     });
 });
+console.log('What might I do today?')
+*/
+
+/*
+function task1(callback){
+    setTimeout(() => {
+        console.log('Task 1 complete')
+        callback();
+    }, 2000)
+}
+function task2(callback){
+    setTimeout(() => {
+        console.log('Task 2 complete')
+        callback();
+    }, 2000)
+}
+function task3(callback){
+    setTimeout(() => {
+        console.log('Task 3 complete')
+        callback();
+    }, 2000)
+}
+task1(() => {
+    task2(() => {
+        task3(() => {
+            console.log('All tasks complete!')
+        })
+    })
+})
+*/
+
+/*
+//Note to self invoke resolve/reject with () 
+let cat = new Promise((resolved, rejected) => {
+    setTimeout(() => {
+        rejected()
+    }, 2000)
+})
+
+    cat
+        .then(() => {
+            console.log('Nice cat')
+        })
+        .catch(() => {
+            console.log('Mean cat')
+        })
+
+    let prom = new Promise((resolved, rejected) => {
+        setTimeout(() => {                
+        rejected()    
+        }, 3000)
+    })
+
+    prom 
+        .then(() => {
+            console.log('Im going to prom')
+        })
+       .catch(() => {
+             console.log('Im not going to prom') 
+        })
 */
