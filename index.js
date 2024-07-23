@@ -34,11 +34,12 @@ let isRunning = true;
 
 greet()
 isRunning ? console.log('Program running') : console.log('Program not running');
-*/
+
 //can seem to use this callback, back to yt 
+*/
 
 /*
-😈🔥welcome to callback hell🔥😈 
+//😈🔥welcome to callback hell🔥😈 
 function task1(callback){
     setTimeout(() => {
         console.log('Task one complete!')
@@ -69,9 +70,33 @@ function task5(callback){
         callback();
     }, 2000)
 }
-function task6(){
+function task6(callback){
     setTimeout(() => {
         console.log('Task six complete!')
+        callback()
+    }, 2000)
+}
+function task7(callback){
+    setTimeout(() => {
+        console.log('Task seven complete!')
+        callback()
+    }, 2000)
+}
+function task8(callback){
+    setTimeout(() => {
+        console.log('Task eight complete!')
+        callback()
+    }, 2000)
+}
+function task9(callback){
+    setTimeout(() => {
+        console.log('Task nine complete!')
+        callback()
+    }, 2000)
+}
+function task10(){
+    setTimeout(() => {
+        console.log('Task ten complete!')
     }, 2000)
 }
 task1(() => {
@@ -79,13 +104,22 @@ task1(() => {
         task3(() => {
             task4(() => {
                 task5(() => {
-                    task6();
-                });
-            });
-        });
-    });
-});
+                    task6(() => {
+                        task7(() => {
+                            task8(() => {
+                                task9(() => {
+                                    task10()
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+        })
+    })
+})
 */
+
 /*
 function one(callback){
     setTimeout(() => {
@@ -225,7 +259,7 @@ function timer(){
 timer()
 */
 /*
-let bro = 'Chris';
+let bro = 'whis';
 
 const tiempo = () => {
     setTimeout(() => {
@@ -301,10 +335,10 @@ task1(() => {
 */
 
 /*
-//Note to self invoke resolve/reject with () 
+//Note to self resolve/reject with () 
 let cat = new Promise((resolved, rejected) => {
     setTimeout(() => {
-        rejected()
+        resolved()
     }, 2000)
 })
 
@@ -315,12 +349,13 @@ let cat = new Promise((resolved, rejected) => {
         .catch(() => {
             console.log('Mean cat')
         })
-
-    let prom = new Promise((resolved, rejected) => {
-        setTimeout(() => {                
+*/
+/*
+let prom = new Promise((resolved, rejected) => {
+    setTimeout(() => {                
         rejected()    
-        }, 3000)
-    })
+    }, 3000)
+})
 
     prom 
         .then(() => {
@@ -330,3 +365,39 @@ let cat = new Promise((resolved, rejected) => {
              console.log('Im not going to prom') 
         })
 */
+/*
+fetch('https://pokeapi.co/api/v2/pokemon/charmeleo')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error)
+        error = console.error('Whoops error!')
+
+
+fetch('https://pokeapi.co/api/v2/pokemon/snorla')
+
+    .then(response => {
+        if(!response.ok){
+            throw new Error ('Error fetching file')
+        }
+        return(response.json())
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+*/
+/*
+//fetch, a promise that returns a response object. 
+
+
+
+
+fetch('https://pokeapi.co/api/v2/pokemon/charizar')
+    .then(response => {
+        if(!response.ok){
+            throw new Error('Whoops error!')
+        }
+        return (response.json())
+    .then(data => console.log(data))        
+    .catch(console.error('Whoops error!'))
+    })
+*/
+
