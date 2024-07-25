@@ -1,14 +1,14 @@
 let count = 0;
 
-document.getElementById('btn1').onclick = () => {
+document.getElementById('increaseButton').onclick = () => {
     count++;
     document.getElementById('myLabel').innerHTML = count;
 }
-document.getElementById('btn2').onclick = () => {
+document.getElementById('resetButton').onclick = () => {
     count = 0;
     document.getElementById('myLabel').innerHTML = count;
 }
-document.getElementById('btn3').onclick = () => {
+document.getElementById('increaseButton').onclick = () => {
     count--;
     document.getElementById('myLabel').innerHTML = count;
 }

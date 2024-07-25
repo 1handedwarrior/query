@@ -1,10 +1,9 @@
 /*
 function greet (){
-    console.log('hello')
+    console.log('hello world')
 }
-//greet()
+greet()
 
-let name = 'chris';
 
 function greetUser (){
     let name = 'chris'
@@ -34,9 +33,8 @@ let isRunning = true;
 
 greet()
 isRunning ? console.log('Program running') : console.log('Program not running');
-
-//can seem to use this callback, back to yt 
 */
+//can seem to use this callback, back to yt 
 
 /*
 //😈🔥welcome to callback hell🔥😈 
@@ -94,9 +92,10 @@ function task9(callback){
         callback()
     }, 2000)
 }
-function task10(){
+function task10(callback){
     setTimeout(() => {
         console.log('Task ten complete!')
+        callback()
     }, 2000)
 }
 task1(() => {
@@ -108,7 +107,9 @@ task1(() => {
                         task7(() => {
                             task8(() => {
                                 task9(() => {
-                                    task10()
+                                    task10(() => {
+                                        console.log('All tasks finished✅')
+                                    })
                                 })
                             })
                         })
@@ -120,49 +121,15 @@ task1(() => {
 })
 */
 
-/*
-function one(callback){
-    setTimeout(() => {
-        console.log('I log 1 after 1 second')
-        callback();
-    }, 1000)
-}
-function two(callback){
-    setTimeout(() => {
-        console.log('I log 2 after 2 second')
-        callback();
-    }, 2000)
-}
-function three(callback){
-    setTimeout(() => {
-        console.log('I log 3 after 3 second')
-        callback();
-    }, 3000)
-}
-function four(){
-    setTimeout(() => {
-        console.log('I log 4 after 4 second')
-    }, 4000)
-}
-one(() => {
-    two(() => {
-        three(() => {
-            four();
-        });
-    });
-});
-*/
-/*
 let berries = ['strawberry', 'blueberry', 'blackberry']
 let snacks = ['granola bar', 'cup of nuts', 'cup of oats']
 
 function drink(callback){
     setTimeout(()=> {
         console.log(`Hi can I have a ${berries[2]} smoothie`)  
+    ///    callback()
     }, 3000)
-    setTimeout(() => {
         callback()
-    }, 4000)
 }
 
 function snack(){
@@ -172,14 +139,16 @@ function snack(){
 }
 
 //this one still needs some practicing
-drink(snack)
-*/
+drink(() => {
+    snack()
+})
+
 
 /*
 let weather = new Promise ((resolve, reject) => {
     setTimeout(() => 
-      reject(), 3000)
-    //  resolve(), 3000)
+    //  reject(), 3000)
+      resolve(), 3000)
 })
 
     
@@ -193,21 +162,7 @@ let weather = new Promise ((resolve, reject) => {
 })
 
 console.log('whats the weather today?')
-*/
-/*
-const promise = new Promise ((resolved, rejected) => {
-    setTimeout(() => 
-        rejected(), 2000)
-})
-
-  promise 
-    .then(() => {
-        console.log('i kept the promise')
-    })
-    .catch(() => {
-        console.log('I did not keep the promise')
-    
-})
+console.log(typeof weather)
 */
 /*
 const myPromise = new Promise ((resolve, reject) => {
@@ -229,48 +184,20 @@ myPromise
 catch{
     console.error('Whoops something went wrong')
 }
+console.log(typeof myPromise)
 */
 /*
-function greet (){
-    setTimeout(() =>
-    console.log('greetings bruv'), 3000)
-    }
-
-greet()
-*/
-/*
-function timer (){
-    setTimeout(() => {
-        console.log('I made this timer boi')}, 3000)
-    
-}
-
-timer()
-// just getting the feel for setting timeouts
-
-*/
-/*
-let guy = window.prompt('whats your name?');
-function timer(){
-    setTimeout(() => {
-        console.log(`sup ${guy}`)}, 2000)
-    }
-
-timer()
-*/
-/*
-let bro = 'whis';
+let bro = ['whis', 'beerus', 'goku'];
 
 const tiempo = () => {
     setTimeout(() => {
-        console.log(`sup ${bro}`)
+        console.log(`sup ${bro[2]}`)
     }, 0)
 }
 
 
 tiempo()
 console.log('this should come before tiempo')
-*/
 /*
 the reason the console.log string comes first even though 
 the timeout id is for 0 ms, is the event loop. I think ?
@@ -303,9 +230,9 @@ washCar(() => {
         sleep();
     });
 });
-console.log('What might I do today?')
-*/
+console.log('What will I do today?')
 
+*/
 /*
 function task1(callback){
     setTimeout(() => {
@@ -401,3 +328,13 @@ fetch('https://pokeapi.co/api/v2/pokemon/charizar')
     })
 */
 
+/*
+class person {
+    constructor(name, age){
+        this.name = name
+        this.age = age
+    }
+}
+
+console.log(person)
+*/
